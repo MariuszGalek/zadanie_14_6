@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+    background-color: #99ff99;
+}
+.counter, button {
+    margin: 30px;
+    padding: 10px;
+}
+button {
+	width: 80px;
+	height: 50px;
+	background-color: #33ff33;
+	border-radius: 10px;
+}
+span {
+    display: block;
+}
