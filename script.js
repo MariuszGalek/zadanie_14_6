@@ -17,22 +17,6 @@ var Counter = React.createClass({
         });
     },
 
-    render: function() {
-        return React.createElement('div', {className: 'counter'},
-            React.createElement('span', {}, '1st Counter: ' + this.state.counter),
-            React.createElement('button', {onClick: this.increment}, ' +1 '),
-            React.createElement('button', {onClick: this.decrement}, ' -1 ')
-        );
-    }
-});
-
-var Counter2 = React.createClass({
-    getInitialState: function() {
-        return {
-            counter: 1
-        };
-    },
-
     multiply: function() {
         this.setState({
             counter: this.state.counter *2
@@ -46,12 +30,13 @@ var Counter2 = React.createClass({
     },
 
     render: function() {
-        return React.createElement('div', {className: 'single-counter'},
-            React.createElement('span',{}, '2nd Counter: ' + this.state.counter),
+        return React.createElement('div', {className: 'counter'},
+            React.createElement('span', {}, 'Counter: ' + this.state.counter),
+            React.createElement('button', {onClick: this.increment}, ' +1 '),
+            React.createElement('button', {onClick: this.decrement}, ' -1 '),
             React.createElement('button', {onClick: this.multiply}, " *2 "),
-            React.createElement('button', {onClick: this.divide}, " /2 ")
-        );
-    },
+            React.createElement('button', {onClick: this.divide}, " /2 "))
+        },
 
     getDefaultProps: function() {
         console.log("getDefaultProps: set some default props, if there were no props set while creating an isntance");
@@ -87,10 +72,8 @@ var Counter2 = React.createClass({
     }
 });
 
-
 var element = React.createElement('div', {},
-    React.createElement(Counter),
-    React.createElement(Counter2)
+    React.createElement(Counter, {}),
+    React.createElement(Counter, {})
 );
 ReactDOM.render(element, document.getElementById('app'));
-
